@@ -20,11 +20,6 @@ impl PyMemcache {
         }
     }
 
-    // #[getter]
-    // fn cache(&self, py: Python) -> &PyDict {
-    //     self.cache.into_inner().into_ref(py)
-    // }
-
     #[pyo3(signature = (*args, **kwargs))]
     fn __call__(
         &mut self,
