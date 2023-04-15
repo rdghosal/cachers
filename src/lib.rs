@@ -1,3 +1,4 @@
+use pyo3::exceptions::PyException;
 use pyo3::prelude::*;
 use pyo3::types::{PyDict, PyTuple};
 use std::cell::Cell;
@@ -31,22 +32,24 @@ impl PyMemcache {
         args: &PyTuple,
         kwargs: Option<&PyDict>,
     ) -> PyResult<Py<PyAny>> {
-        let mut k: String = args.to_string();
-        if !kwargs.is_none() {
-            k.push_str(&kwargs.unwrap().to_string());
+        let mut key: String = args.to_string();
+        if let Option::Some(kwds) = kwargs {
+            key.push_str(&kwds.to_string());
         }
-        let cache: &PyDict = self.cache.get_mut().as_ref(py);
-        if cache.contains(k.to_owned()).unwrap() {
-            return Ok(cache.get_item(k).unwrap().into())
+        let cache = self.cache.get_mut().as_ref(py);
+        match cache.get_item(key.clone()) {
+            Some(value) => Ok(value.into()),
+            None => {
+                let result = self.wraps.call(py, args, kwargs)?;
+                cache.set_item(key, result.clone())?;
+                Ok(result)
+            }
         }
-        let value = self.wraps.call(py, args, kwargs).expect("failed to execute wrapped function");
-        cache.set_item(k, &value);
-        Ok(value)
     }
 }
 
 #[pymodule]
-pub fn decorator(_py: Python<'_>, module: &PyModule) -> PyResult<()> {
+pub fn cachers(_py: Python<'_>, module: &PyModule) -> PyResult<()> {
     module.add_class::<PyMemcache>()?;
     Ok(())
 }
