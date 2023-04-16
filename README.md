@@ -31,7 +31,7 @@ running
 
 ```
 
-For a more interesting example (assuming you like basic arithemtic), take a look at [this example](https://github.com/rdghosal/memoirs/tree/master/examples/test.ipynb).
+For something more interesting (well, if you like basic arithemtic), take a look at [this example](https://github.com/rdghosal/memoirs/tree/master/examples/test.ipynb).
 
 ---
 
