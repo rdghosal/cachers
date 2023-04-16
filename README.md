@@ -1,6 +1,8 @@
 # memoirs
 > Because _built in Rust_ must mean it's blazing fast... right?
 
+---
+
 ## Description
 
 Rust that compiles into a Python package that offers simple in-**mem**ory caching...
@@ -31,6 +33,8 @@ running
 
 For a more interesting example (assuming you like basic arithemtic), take a look at `examples/test.ipynb`.
 
+---
+
 ## Installation
 
 To play around with it (please don't use this in prod).
@@ -52,6 +56,8 @@ maturin develop
 ```
 
 There. Good to go.
+
+---
 
 ## But, how?
 
