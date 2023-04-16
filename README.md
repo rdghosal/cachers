@@ -1,5 +1,5 @@
 # memoirs
-> because 'built in Rust' must mean it's blazing fast... right?
+> Because 'built in Rust' must mean it's blazing fast... right?
 
 ## Description
 
