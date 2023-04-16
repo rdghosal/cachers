@@ -35,10 +35,12 @@ For a more interesting example (assuming you like basic arithemtic), take a look
 
 To play around with it (please don't use this in prod).
 
-### 1. Set up a virtual environment
+### 1. Set up a virtual environment and install [`maturin`](https://github.com/PyO3/maturin)
 
 ```bash
-python -m venv .venv
+$ python -m venv .venv
+$ source .venv/bin/activate
+$ pip install maturin
 
 ```
 
