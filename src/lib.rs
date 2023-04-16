@@ -1,20 +1,19 @@
-use pyo3::exceptions::PyException;
 use pyo3::prelude::*;
 use pyo3::types::{PyDict, PyTuple};
 use std::cell::Cell;
 
-#[pyclass(name = "Memcache")]
-pub struct PyMemcache {
+#[pyclass(name = "Cache")]
+pub struct PyCache {
     wraps: Py<PyAny>,
     cache: Cell<Py<PyDict>>,
 }
 
 #[pymethods]
-impl PyMemcache {
+impl PyCache {
 
     #[new]
     fn __new__(py: Python<'_>, wraps: Py<PyAny>) -> Self {
-        PyMemcache {
+        PyCache {
             wraps,
             cache: Cell::new(PyDict::new(py).into()),
         }
@@ -44,8 +43,8 @@ impl PyMemcache {
 }
 
 #[pymodule]
-pub fn cachers(_py: Python<'_>, module: &PyModule) -> PyResult<()> {
-    module.add_class::<PyMemcache>()?;
+pub fn memoirs(_py: Python<'_>, module: &PyModule) -> PyResult<()> {
+    module.add_class::<PyCache>()?;
     Ok(())
 }
 
