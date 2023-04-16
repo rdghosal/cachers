@@ -1,5 +1,5 @@
 # memoirs
-> Because _built in Rust_ must mean it's blazing fast... right?
+> Because _built in Rust_ must mean it's blazingly fast... right?
 
 ---
 
