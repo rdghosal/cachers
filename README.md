@@ -4,7 +4,7 @@
 ## Description
 
 Rust that compiles into a Python package that offers simple in-**mem**ory caching...
-well, more like **mem**oization.
+or is it more like **mem**oization? 🤔
 
 ```python
 import memoirs
@@ -13,6 +13,10 @@ import memoirs
 def my_fancy_func(*args) -> str:
     print('running') 
     return ' '.join(str(a) for a in args)
+
+```
+
+```python
 
 >>> my_fancy_func('Hello', 'World!') 
 running
