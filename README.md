@@ -1,5 +1,5 @@
 # memoirs
-> because 'built on Rust' must mean it's blazing fast... right?
+> because 'built in Rust' must mean it's blazing fast... right?
 
 ## Description
 
@@ -15,6 +15,8 @@ def my_fancy_func(*args) -> str:
     return ' '.join(str(a) for a in args)
 
 ```
+
+Once a function return is memoized, subsequent invocations return a cached result without running the function again.
 
 ```python
 
@@ -48,4 +50,8 @@ maturin develop
 ```
 
 There. Good to go.
+
+## But, how?
+
+This project is made possible by `pyo3`. [Check 'em out!](https://github.com/PyO3)!
 
