@@ -5,8 +5,8 @@
 
 ## Description
 
-Rust that compiles into a Python package that offers simple in-_mem_ory caching...
-or is it more like _mem_oization? 🤔
+Rust that compiles into a Python package that offers simple in-*mem*ory caching...
+or is it more like *mem*oization? 🤔
 
 ```python
 import memoirs
