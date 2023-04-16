@@ -37,7 +37,7 @@ For a more interesting example (assuming you like basic arithemtic), take a look
 
 ## Installation
 
-To play around with it (please don't use this in prod).
+To play around with it (please don't use this in prod):
 
 ### 1. Set up a virtual environment and install [`maturin`](https://github.com/PyO3/maturin)
 
@@ -51,7 +51,7 @@ $ pip install maturin
 ### 2. Install a dev version of the package into your virtual environment
 
 ```bash
-maturin develop
+$ maturin develop
 
 ```
 
