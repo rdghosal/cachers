@@ -35,14 +35,14 @@ For a more interesting example (assuming you like basic arithemtic), take a look
 
 To play around with it (please don't use this in prod).
 
-### 1. Set up a virtual environment.
+### 1. Set up a virtual environment
 
 ```bash
 python -m venv .venv
 
 ```
 
-### 2. Install a dev version of the package into your virtual environment.
+### 2. Install a dev version of the package into your virtual environment
 
 ```bash
 maturin develop
